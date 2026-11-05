@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Digital - Asyqar Rafi M</title>
+  <meta name="description" content="Curriculum Vitae digital Asyqar Rafi M, mahasiswa D3 Teknik Komputer Universitas Bani Saleh.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigasi utama: setiap tautan menuju bagian yang benar-benar ada di halaman ini -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="nav-brand" href="#home">Asyqar Rafi M</a>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Profil: foto-profil.png adalah foto resmi pemilik CV,
+         dipotong persegi agar pas pada tampilan lingkaran. -->
+    <section id="home" class="profile">
+      <img class="profile-photo" src="foto-profil.png" alt="Foto profil Asyqar Rafi M"
+           width="160" height="160" fetchpriority="high">
+      <div class="profile-text">
+        <h1>Asyqar Rafi M</h1>
+        <p class="profile-role">Mahasiswa D3 Teknik Komputer, Universitas Bani Saleh</p>
+        <p class="profile-desc">
+          Saya belajar teknologi dengan cara membangun dan menguji langsung. Fokus saya saat ini
+          adalah pengembangan web, jaringan komputer, dan sistem tertanam berbasis IoT. Beberapa
+          proyek yang sudah saya kerjakan antara lain aplikasi desktop Windows, portal web dengan
+          PHP dan MySQL, serta sistem peringatan kebakaran berbasis ESP32.
+        </p>
+        <ul class="profile-contact">
+          <li>Email: emailkamu@gmail.com</li>
+          <li>Telepon: +62 812-0000-0000</li>
+          <li>Bekasi, Jawa Barat</li>
+        </ul>
+        <button type="button" class="btn-print" onclick="window.print()">Cetak / Unduh CV</button>
+      </div>
+    </section>
+
+    <div class="sheet">
+      <section id="about" class="block">
+        <h2>About</h2>
+        <p>
+          Saya mahasiswa Teknik Komputer yang terbiasa mengerjakan proyek dari nol sampai jadi:
+          merancang tampilan, menulis kode, menguji, lalu memperbaiki berdasarkan hasil pengujian.
+          Di bidang jaringan, saya berlatih konfigurasi router dan switch Cisco, DHCP, OSPF, dan NAT
+          melalui Packet Tracer, serta menjalankan lab MikroTik CHR dan Kali Linux di mesin virtual.
+          Di bidang pemrograman, saya membangun aplikasi desktop dengan C# dan WPF, website dengan
+          PHP dan MySQL, dan perangkat IoT dengan ESP32.
+        </p>
+        <p>
+          Tujuan saya setelah lulus adalah bekerja sebagai pengembang web atau teknisi jaringan,
+          sambil terus memperdalam container dengan Docker dan administrasi server Linux.
+        </p>
+      </section>
+
+      <section id="education" class="block">
+        <h2>Education</h2>
+        <div class="entry">
+          <p class="entry-year">2024 - sekarang</p>
+          <div class="entry-body">
+            <h3>Universitas Bani Saleh, Bekasi</h3>
+            <p class="entry-sub">Diploma 3 Teknik Komputer</p>
+            <p>
+              Mata kuliah yang relevan: Teknologi Web, Jaringan Komputer, Pengaturan Elektronika,
+              Simulasi dan Pemodelan, serta praktikum sistem tertanam. Menyusun karya tulis ilmiah
+              tentang sistem peringatan dini dan pemadam kebakaran otomatis berbasis IoT.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="block">
+        <h2>Experience</h2>
+        <article class="entry">
+          <p class="entry-year">2025</p>
+          <div class="entry-body">
+            <h3>Pengembang Proyek IoT, SIAGA API</h3>
+            <p class="entry-sub">Proyek karya tulis ilmiah, Universitas Bani Saleh</p>
+            <p>
+              Merancang sistem peringatan dini dan pemadam kebakaran otomatis untuk rumah berbasis
+              ESP32, dengan sensor suhu DHT22, sensor gas MQ-2, dan sensor api. Dashboard web
+              menampilkan status AMAN, WASPADA, dan KEBAKARAN, menggerakkan pompa, alarm, dan kipas
+              exhaust secara otomatis, serta mengirim peringatan ke WhatsApp.
+            </p>
+          </div>
+        </article>
+        <article class="entry">
+          <p class="entry-year">2025</p>
+          <div class="entry-body">
+            <h3>Pengembang Aplikasi Desktop, Lembayung</h3>
+            <p class="entry-sub">Proyek pribadi, C# dan WPF (.NET 8)</p>
+            <p>
+              Membangun aplikasi Windows bergaya Dynamic Island dengan animasi pegas, widget jam,
+              baterai, dan media yang terhubung ke Windows Media Session, lengkap dengan menu
+              pengaturan, ikon tray, dan installer.
+            </p>
+          </div>
+        </article>
+        <article class="entry">
+          <p class="entry-year">2025</p>
+          <div class="entry-body">
+            <h3>Praktikum Jaringan Komputer</h3>
+            <p class="entry-sub">Laboratorium dan lab mandiri</p>
+            <p>
+              Mengonfigurasi DHCP, routing OSPF, dan NAT pada topologi tiga router Cisco di Packet
+              Tracer, serta menjalankan MikroTik CHR dan Kali Linux di VirtualBox untuk latihan
+              administrasi jaringan dan keamanan dasar.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="skills" class="block">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Pengembangan Web</h3>
+            <ul>
+              <li>HTML5 dan CSS3 (Flexbox, Grid)</li>
+              <li>PHP dan MySQL</li>
+              <li>JavaScript dasar</li>
+              <li>Git dan GitHub</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Pemrograman</h3>
+            <ul>
+              <li>C# dan WPF (.NET)</li>
+              <li>Python</li>
+              <li>Pemrograman ESP32</li>
+              <li>Simulasi rangkaian di SimulIDE</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Jaringan Komputer</h3>
+            <ul>
+              <li>Cisco Packet Tracer</li>
+              <li>DHCP, OSPF, dan NAT</li>
+              <li>MikroTik RouterOS (CHR)</li>
+              <li>Dasar TCP/IP dan subnetting</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Sistem dan Alat</h3>
+            <ul>
+              <li>Docker dan WSL</li>
+              <li>Linux Debian dan Ubuntu</li>
+              <li>VirtualBox</li>
+              <li>XAMPP</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="block">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <article class="project project-wide">
+            <h3>Lembayung</h3>
+            <p>
+              Aplikasi desktop Windows yang menampilkan pulau informasi di tepi atas layar:
+              jam, baterai, berkas yang diseret, dan lagu yang sedang diputar lewat Windows
+              Media Session. Dibangun dari nol dengan animasi pegas agar gerakannya halus.
+            </p>
+            <p class="project-tech">C#, WPF, .NET 8, SkiaSharp</p>
+          </article>
+          <article class="project">
+            <h3>GameVault</h3>
+            <p>
+              Portal web katalog game dengan pencarian, filter, ulasan bintang, favorit,
+              akun pemain, dan panel admin. Ditambah tiga game HTML5 yang bisa dimainkan
+              langsung di browser.
+            </p>
+            <p class="project-tech">PHP, MySQL, HTML, CSS</p>
+          </article>
+          <article class="project">
+            <h3>SIAGA API</h3>
+            <p>
+              Dashboard pemantau kebakaran rumah yang menerima data sensor ESP32, menentukan
+              tingkat bahaya, dan menyalakan pompa, alarm, serta kipas exhaust secara otomatis.
+            </p>
+            <p class="project-tech">ESP32, HTML, CSS, JavaScript</p>
+          </article>
+          <article class="project">
+            <h3>Referensi Obat</h3>
+            <p>
+              Aplikasi Android berisi referensi obat untuk perawat dan mahasiswa keperawatan,
+              dengan pencarian kata kunci, filter kategori, dan catatan penting pada setiap obat.
+            </p>
+            <p class="project-tech">Android, Java</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="block">
+        <h2>Contact</h2>
+        <!-- GANTI sebelum dikumpulkan: alamat email, nomor telepon, dan nama pengguna GitHub di bawah ini masih contoh. -->
+        <ul class="contact-list">
+          <li><span class="contact-label">Email</span> emailkamu@gmail.com</li>
+          <li><span class="contact-label">Telepon</span> +62 812-0000-0000</li>
+          <li><span class="contact-label">GitHub</span> github.com/username-kamu</li>
+          <li><span class="contact-label">Lokasi</span> Bekasi, Jawa Barat, Indonesia</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>CV Digital Asyqar Rafi M, dibuat dengan HTML5 dan CSS3.</p>
+  </footer>
+
+</body>
+</html>
