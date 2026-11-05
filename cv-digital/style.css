@@ -1,0 +1,419 @@
+/* ============================================================
+   CV Digital - Asyqar Rafi M
+   Keputusan desain (satu alasan per keputusan):
+   - Palet: kertas hangat, tinta pekat, satu aksen hijau tua.
+     Hijau dipakai hemat (pita profil, tautan aktif, tombol cetak)
+     agar halaman terasa seperti dokumen resmi, bukan templat web.
+   - Tipografi: Georgia untuk judul (karakter dokumen cetak),
+     sans bawaan sistem untuk isi (cepat, tanpa unduhan font,
+     tetap terbaca baik di layar maupun hasil cetak).
+   - Layout dokumen: lebar dibatasi seperti lembar CV, susunan
+     bagian mengikuti urutan membaca CV, bukan templat landing page.
+   - Radius: satu nilai 8px untuk kartu dan tombol, foto lingkaran
+     penuh karena foto profil memang lazim tampil bulat.
+   - Bayangan: hanya muncul saat kartu portofolio di-hover, sebagai
+     tanda elemen itu bisa diperhatikan lebih dekat, bukan dekorasi.
+   ============================================================ */
+
+:root {
+  --paper: #faf9f6;
+  --ink: #1d1b18;
+  --ink-soft: #4c4741;
+  --line: #ddd9d2;
+  --accent: #1d5c3f;
+  --accent-dark: #14452e;
+  --accent-ink: #ffffff;
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.25;
+}
+
+/* ---------- Navigasi (Flexbox) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav-brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.nav-menu a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Profil (Flexbox + warna latar) ---------- */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1024px;
+  margin: 32px auto 0;
+  padding: 40px 48px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: var(--radius);
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-ink);
+  flex-shrink: 0;
+}
+
+.profile-text h1 {
+  font-size: 2.4rem;
+  margin-bottom: 4px;
+}
+
+.profile-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.profile-desc {
+  max-width: 56ch;
+  margin-bottom: 16px;
+}
+
+.profile-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.btn-print {
+  background: var(--accent-ink);
+  color: var(--accent-dark);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.btn-print:hover {
+  background: var(--ink);
+  color: var(--accent-ink);
+}
+
+.btn-print:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Isi CV ---------- */
+.sheet {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 8px 48px 24px;
+}
+
+.block {
+  padding: 32px 0 8px;
+}
+
+.block h2 {
+  font-size: 1.55rem;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.block p {
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  max-width: 68ch;
+}
+
+/* Baris pendidikan dan pengalaman (Flexbox) */
+.entry {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.entry + .entry {
+  border-top: 1px solid var(--line);
+}
+
+.entry-year {
+  flex: 0 0 130px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.block p.entry-year {
+  margin-bottom: 0;
+}
+
+.entry-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+.entry-sub {
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.block p.entry-sub {
+  margin-bottom: 8px;
+}
+
+/* ---------- Skills (CSS Grid) ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-group {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.skill-group h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.skill-group ul {
+  list-style: none;
+}
+
+.skill-group li {
+  color: var(--ink-soft);
+  padding: 5px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.skill-group li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Portfolio (CSS Grid) ---------- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(29, 27, 24, 0.12);
+}
+
+.project-wide {
+  grid-column: span 2;
+}
+
+.project h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.project-tech {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.block p.project-tech {
+  margin-bottom: 0;
+}
+
+/* ---------- Kontak (Flexbox) ---------- */
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  list-style: none;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: 1024px;
+  margin: 24px auto 0;
+  padding: 20px 48px 32px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 760px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+    margin: 16px 16px 0;
+  }
+
+  .profile-contact {
+    justify-content: center;
+  }
+
+  .sheet {
+    padding: 8px 24px 16px;
+  }
+
+  .entry {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .entry-year {
+    flex-basis: auto;
+  }
+
+  .skills-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-wide {
+    grid-column: span 1;
+  }
+
+  .nav {
+    justify-content: center;
+    padding: 8px 12px;
+  }
+
+  .site-footer {
+    padding: 20px 24px 28px;
+  }
+}
+
+/* Gerakan dikurangi untuk pengguna yang memintanya */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none;
+  }
+}
+
+/* ---------- Cetak: tombol Download/Print menghasilkan lembar bersih ---------- */
+@media print {
+  .site-header,
+  .btn-print {
+    display: none;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .profile {
+    background: #ffffff;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    margin-top: 0;
+  }
+
+  .profile-photo {
+    border-color: var(--line);
+  }
+
+  .project:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
